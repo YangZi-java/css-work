@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            #in {
+                display: inline-block;
+            }
+            #pa {
+                width: 100px;
+                height: 100px;
+                background: red;
+                padding: 20px;
+            }
+            #test:hover + #sister{
+                color: red;
+            }
+            #inner {
+                color: red;
+            }
+            #outer div {
+                color: black;
+            }
+        </style>
+
+    </head>
+    <body>
+        <div id="in">
+            hello
+        </div>
+        <span>world</span>
+        <a>
+            <img src="../img/TB1ztBlaMMPMeJjy1XbXXcwxVXa-200-60.png">
+        </a>
+        <!-- line-hight 和 hight 的关系 -->
+        <div style="line-height: 50px;background: red;">
+        高度为零
+        </div>
+        <br>
+        <div id="pa">
+
+        </div>
+        <!-- 文本位置 -->
+        <div style="position: relative;width: 100px; height: 100px;">
+            <div style="position: absolute;">
+                你好啊<br>
+                我是tom
+            </div>
+        </div>
+<!-- hover -->
+        <div id="test">
+            hello world i am test
+            <div id="son">
+                hello world im am son
+            </div>
+        </div>
+        <div id="brother">
+            hello world i am brother
+        </div>
+        <div id="sister">
+            hello world i am sister
+        </div>
+        <!-- 选择器优先顺序 -->
+        <div id="outer">
+            <div id="inner">
+                我是红色吗？
+            </div>
+        </div>
+        <div style="background: goldenrod;overflow: hidden;;">
+            <img style="width:100px;height:100px;margin-top:10px" src="../img/17.jpg">
+            <!-- <div style="width: 100px;height: 100px;margin-top: 10px;border: 1px solid green;"></div> -->
+        </div>
+        <span title="显示时间的">title 干啥的？</span>
+       
+    </body>
+</html>

@@ -1,0 +1,41 @@
+<html>
+<title>css 动画</title>
+<head>
+    <style>
+        #animation {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            background: green;
+            animation: my 5s;
+        }
+        @keyframes my {
+            /* 两种写法
+            1. from{}to{}
+            2. ?%{} 中间多状态动画
+             */
+              0%{background: red;left: 0px;top: 0px;}
+              25%{background: blue;left: 200px;top:0px}
+              50%{background: yellowgreen;left: 200px;top: 200px;}
+              75%{background: purple;left: 0px;top:200px}
+              100%{background: black;left: 0px;top:0px}
+        }
+    </style>
+</head>
+
+<body>
+    <div id="animation">
+    </div>
+    <!-- 
+        一个元素只能拥有left or right 一个属性，否则浏览器直接忽略right(无论right是内联样式还是！important)
+        left right 只针对非static元素起作用 -->
+    <div style="left:100px;position:relative" >
+        <div style="left: 100px;position: relative;">
+            <div style="width: 50px;height: 50px;background: red;left: 200px;position: relative;"></div>
+        </div>
+    </div>
+    <div style="width: 50px;height: 50px;background: red;left: 400px;position: relative;"></div>
+
+</body>
+
+</html>　　

@@ -1,0 +1,87 @@
+恢复浏览器大小：ctrl+0
+html代码格式整理：shift+ctrl+f
+删除光标所在行 ctrl+shift+k
+
+一个元素只能拥有left or right 一个属性，否则浏览器直接忽略right(无论right是内联样式还是！important)
+left right 只针对非static元素起作用
+
+:hover 等伪类只能作用于自身: .a:hover{}  相邻兄弟 a:hover + .b{}  子元素 a:hover .c{}
+z-index 只在定位元素上生效 例如 position: absolute
+
+text-align 针对inline/inline-block 元素水平居中显示的 若元素定位position absolute 则不生效
+因为脱离了文档流。但是，由于行元素的幽灵空白点存在，由于幽灵空白居中了所以图片看似也居中了，实际上
+图片是跟在幽灵空白之后的。
+注：有时容器设置了text-align:center 其行级子元素和块级子元素都会居中，块级元素居中效果怎么解释？
+答：块级元素在不设置width情况下，宽度继承了父容器的宽度，高度由内容撑开，并且继承了text-aling属性
+所以块级元素也会居中显示。为验证这个解释正确性，可以设置该块级元素宽度或者设置该块级元素为inline-block
+设置宽度后，发现块级元素不居中（相对于父容器），但是内容居中（相对于该块级元素）
+设置inline-block 后 也会居中（相对于父容器）
+margin auto 使用？（auto 只可用于 width margin-left margin-right ）
+一侧为数值，另一侧为auto ,则auto为剩余空间值
+两侧均为auto，则auto 为均分空间值
+margin 默认数值：0，可实现以下效果
+右对齐
+{
+    margin-left：auto
+}
+左对齐
+{
+    margin-right:auto
+}
+两侧对齐
+{
+    margin:auto auto;
+}
+****由于元素在高度上不具有自动填充效果，因此在margin:auto 在高度上没有作用
+要使垂直方向能计算，可以通过改变文档流方向
+.father {
+ height: 200px;
+ writing-mode: vertical-lr;
+}
+.son {
+ height: 100px;
+ margin: auto;
+} 
+垂直居中方法
+1. top:50% margin-top：-(元素高度/2)
+2 .son {
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    width: 200px; height: 100px;
+    margin: auto;
+} 
+这里是利用了absolut 元素若同时设置了left/right ;top/bottom 便可使absolute元素具有格式化宽度/格式化高度
+功能（即根据父容器自动填充宽度和高度）由此可以同时实现水平居中和垂直居中
+
+
+
+margin 合并?
+margin 合并只发生在垂直方向
+父子之间
+相邻兄弟之间
+合并规则
+正大取正大 负大取负大 正负相加
+
+
+x:first-child {} 大兒子选择器 儿子：first-child{}
+
+padding margin 属性一些说明
+1. 块级元素（block）拥有padding-top padding-bottom margin-top margin-bottom 全部属性
+2. 行级元素（inline）
+    2.1 span a 等不可替换元素padding-top margin-top 无效（即使设置并不会撑开容器，元素盒子上下边缘还是content）
+    2.2 img input butto等可替换元素全部有效
+
+//vertical baseline
+//linehight hight
+
+
+
+
+行级元素baseline位置确定
+1. 非替换inline元素 span a 
+字符x的下边缘
+2. 替换inline元素 img input button
+替换元素的下边缘
+3. inline-block 元素
+    3.1 元素内没有inline(1/2)元素，inline-block元素的下边缘
+    3.2 元素有inline(1/2)元素，1/2元素的基线

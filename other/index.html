@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <style>
+        /* 
+        1.行级元素是不是沙盒模型？
+        答：是。
+        2.行级元素可以设置padding marging？
+        答：行级元素可以设置padding-left padding-right margin-left margin-right
+            行级元素padding-top padding-bottom margin-top margin-bottom 无效
+            行级元素paddding-top padding-bottom 只有显示效果，不会对其他元素产生影响(例如不会撑开父容器的高度)。
+         */
+        /* 注意根元素是html body标签默认有margin值 */
+        body {
+            margin: 0;
+        }
+        #header {
+            background: grey;
+            text-align: center;
+            height: 5em;
+            line-height: 5em;
+        }
+        #nav {
+            background:black;
+            height: 3em;
+            color: whitesmoke;
+            text-align: center;
+            
+        }
+        .go {
+            float: left;
+            padding: 1em;
+        }
+        .go:hover {
+            background: whitesmoke;
+            color: black;
+        }
+    </style>
+    </head>
+    <body>
+        <div id="header">
+            头部区域
+        </div>
+        <div id="nav">
+            <a class="go">链接一</a>
+            <a class="go">连接二</a>
+            <a class="go">链接三</a>
+
+        </div>
+
+        
+    </body>
+</html>

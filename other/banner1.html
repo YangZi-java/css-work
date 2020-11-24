@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+ <style>
+     *{
+         margin: 0;
+         padding: 0;
+         list-style: none;
+     }
+     .box{
+         width: 1000px;
+         height: 400px;
+         border: 1px solid red;
+         position: relative;
+         margin: 0 auto;
+         
+     }
+     .box .list{
+         width: 1000px;
+         height: 100%;
+         border: 1px solid yellow;
+         
+     }
+     .box .list li{
+         width: 1000px;
+         height: 400px;
+         position: absolute;   /*让所有的图片都叠在一起*/
+         opacity: 0; /*设置透明度为0   看不见 */
+         transition: opacity 1s linear;
+     }
+     .box .list li.in{
+         opacity: 1;
+     }
+     .box .list li img{
+        width: 1000px;
+         height: 400px;
+        
+     }
+     .box .btn{
+         width: 50px;
+         height: 100px;
+         position: absolute;
+         top: 150px;
+     }
+     .box .left{
+         left: 0;
+     }
+     .box .right{
+         right: 0;
+     }
+     .box .page{
+         width: 100%;
+         height: 30px;
+         position: relative;
+         bottom: 30px;
+         left: 0;
+         text-align: center;
+     }
+     .box .page li{
+         width: 15px;
+         height: 15px;
+         border-radius: 50%;
+         background: #000;
+         display: inline-block;
+         margin: 0 20px;
+         
+     }
+    .box .page .on{
+         background: #fff;
+     }
+
+ </style>
+<body>
+    <!-- 可视区域 -->
+    <div class="box">
+        <!-- 图片运动区域 -->
+        <ul class="list">
+            <li class="in"><img src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=486958716,243120904&fm=26&gp=0.jpg" alt=""></li>
+            <li><img src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3241799622,2404142078&fm=26&gp=0.jpg" alt=""></li>
+            <li><img src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3249712317,2640666993&fm=26&gp=0.jpg" alt=""></li>
+        </ul>
+        <!-- 左右按钮 -->
+        <input type="button" value="<" class="btn left">
+        <input type="button" value=">" class="btn right">
+        <!-- 远点区域 -->
+        <ol class="page"> 
+            <li class=" on "></li>
+            <li></li>
+            <li></li>
+        </ol>
+    </div>
+
+
+    <script type="text/javascript">
+            var box = document.querySelector('.box');//获取可视区域的盒子
+            var list = document.querySelector('.list');//获取放图片的盒子，这个盒子是要移动的 
+            var liwidth = document.querySelector('.list li').offsetWidth;//获取放每一个图片的li的宽度
+            var pag = document.querySelector('.page');//获取下面圆圈容器
+            var pageli = document.querySelectorAll('.page li');//获取圆圈个数
+            var leftbtn = document.querySelector('.left');//获取左按钮
+            var rightbtn = document.querySelector('.right');//获取右按钮
+            var listli = document.querySelectorAll('.list li');
+            var count = 0;//规定当前的位置 （当前显示图片的序号，0，1，2）
+
+            // 右按钮的点击事件---点击一下 图片向左移动一张
+            rightbtn.onclick=function(){
+                count++;
+                if(count>=len){      
+                    count = 0;
+                }
+               
+
+                //给图片加上透明度为1
+                for(var i=0;i<listli.length;i++){
+                    listli[i].className=''; //清除所有的类样式
+                }
+                listli[count].className='in'; //加上名为in 的类样式
+
+                //下面圆圈跟着图片的改变 而改变----从黑圈变成白圈
+                for(var i=0;i<pageli.length;i++){
+                    pageli[i].className='';
+                }
+                pageli[count].className='on';
+                
+            }
+            // 左边按钮的点击事件
+           leftbtn.onclick=function(){
+               count--;
+               if(count<=-1){
+                count=len-1;
+               }
+
+               //给图片加上透明度为1
+               for(var i=0;i<listli.length;i++){
+                    listli[i].className=''; 
+                }
+                listli[count].className='in'; 
+                //下面圆圈跟着图片的改变 而改变----从黑圈变成白圈
+               for(var i=0;i<pageli.length;i++){
+                    pageli[i].className='';
+                }
+                pageli[count].className='on';
+                
+           }
+
+           for(var i=0;i<pageli.length;i++){
+                pageli[i].setAttribute('date-index',i);//自定义属性并赋予page中的每一个li
+                // 每个小圆点的点击事件
+                pageli[i].onclick=function(){
+                    // 将点击的小圆点的自定义属性赋予count
+                    count = this.getAttribute('date-index');
+                    list.style.left=-liwidth*count+'px';
+                    for(var i=0;i<pageli.length;i++){
+                        pageli[i].className='';
+                    }
+                        pageli[count].className='on';
+                }
+               
+               
+           }
+           //添加定时器---实现自动轮播
+           var timer = setInterval(function(){
+            rightbtn.onclick();
+           },3000) 
+
+        //    鼠标移出时  添加定时器（启动）
+           box.onmouseleave = function(){
+            timer = setInterval(function(){
+            rightbtn.onclick();
+           },3000) 
+           }
+        //    鼠标移入时  停止定时器（清除）
+           box.onmouseenter = function(){
+            clearInterval(timer);
+           }
+        </script>
+</body>
+
+
+</html>
+
+
+
+
+
+

@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link type="text/css" rel="stylesheet" href="css/banner.css">
+    <link type="text/css" rel="stylesheet" href="css/color.css">
+    <link type="text/css" rel="stylesheet" href="css/maincontent.css">
+    <link type="text/css" rel="stylesheet" href="css/nav.css">
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #direct a:hover {
+            color: red;
+        }
+
+        #header a:hover {
+            color: red;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        body {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #header {
+            height: 32px;
+            line-height: 32px;
+            font-size: 12px;
+            background: #EBEBEB;
+            color: gray;
+            font-family: "Microsoft YaHei", tahoma, arial, 'Hiragino Sans GB', '\5b8b\4f53', sans-serif;
+        }
+
+        .nav-item a:hover {
+            color: red;
+        }
+        .nav-item:hover {
+            background: white;
+        }
+        .nav-item:hover div{
+            display: block;
+        }
+
+        a:hover .b {
+            border-top: transparent;
+            border-bottom-color: grey;
+        }
+
+        .nav-entrance {
+            float: left;
+            padding-left: 10px;
+        }
+
+        #nav {
+            width: 1230px;
+            margin: auto auto;
+        }
+
+        #nav-right li {
+            float: left;
+        }
+
+        .nav-item {
+            position: relative;
+            padding: 0px 14px 0px 10px;
+        }
+
+        .b {
+            position: absolute;
+            top: 14px;
+            width: 0;
+            height: 0;
+            border: 3px solid transparent;
+            border-top-color: grey;
+            transition: all 2s;
+            -moz-transition: all 2s;
+            /* Firefox 4 */
+            -webkit-transition: all 2s;
+            /* Safari 和 Chrome */
+            -o-transition: all 2s;
+            /* Opera */
+        }
+
+        input {
+            width: 491px;
+            height: 36px;
+            border: 2px solid red;
+            box-sizing: border-box;
+            display: inline-block;
+            margin-top: 40px;
+            vertical-align: top;
+
+        }
+
+        button {
+            width: 132px;
+            height: 36px;
+            display: inline-block;
+            background: red;
+            color: whitesmoke;
+            font-weight: bolder;
+            border: 0px;
+            font-weight: 700;
+            letter-spacing: 5px;
+            vertical-align: top;
+            margin-top: 40px;
+            margin-left: -6px;
+        }
+
+        #content {
+            position: relative;
+        }
+
+        .tm_logo {
+            width: 240px;
+            height: 130px;
+            display: block;
+            margin: 1px 25px;
+            position: absolute;
+            left: 99px;
+            top: 0px;
+
+        }
+
+        #search {
+            position: relative;
+            /* left: 99px; */
+            text-align: center;
+
+        }
+
+        #direct {
+            height: 36px;
+            position: relative;
+            margin-top: 57px;
+            left: 144px;
+            box-sizing: border-box;
+
+        }
+
+        .mall_cate {
+            width: 200px;
+            height: 36px;
+            display: inline-block;
+            background: red;
+            color: whitesmoke;
+            font-weight: bold;
+            box-sizing: border-box;
+            padding-left: 20px;
+            line-height: 36px;
+            vertical-align: top;
+
+
+        }
+
+        .cate_icon {
+            padding: 0px 8px;
+            /* float: left; */
+            vertical-align: bottom;
+        }
+
+        #direct img {
+            display: inline-block;
+            margin-top: 3px;
+            vertical-align: bottom;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header">
+        <div id="nav">
+            <div id="nav-left">
+                <span class="nav-entrance">喵，欢迎来到天猫</span>
+                <a class="nav-entrance">请登录</a>
+                <a class="nav-entrance">免费注册</a>
+            </div>
+            <div id="nav-right">
+                <ul>
+                    <li class="nav-item" style="margin-left: 507px;">
+                        <a>我的淘宝</a>
+                        <span class="b"></span>
+                        <div class="nav-pannel nav-mytom">
+                            <a>已买到的宝贝</a>
+                            <a>已卖出的宝贝</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a>购物车</a>
+                        
+                    </li>
+                    <li class="nav-item">
+                        <a>收藏夹</a>
+                        <span class="b"></span>
+                        <div class="nav-pannel nav-mytom">
+                            <a>收藏的宝贝</a><br>
+                            <a>收藏的店铺</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a>手机版</a>
+                        <div class="nav-pannel nav-phone">
+                            <img src="img/69.png" style="width: 175px;height: 227px;">
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a>淘宝网</a>
+                    </li>
+                    <li class="nav-item">
+                        <a>商家支持</a>
+                        <span class="b"></span>
+                        <div class="nav-pannel nav-support">
+                            <div style="border-bottom: 1px dashed gray;line-height: 24px;">
+                                <p style="text-align: left;line-height: 16px;font-weight: bold;">商家：</p>
+                                <a>商家中心</a><a>&nbsp&nbsp 天猫规则</a>
+                                <a>商家中心</a><a>&nbsp&nbsp 天猫规则</a>
+                                <a>商家中心</a><a>&nbsp&nbsp 天猫规则</a>
+                                <a>商家中心</a><a>&nbsp&nbsp 天猫规则</a>
+                                <a>商家中心</a><a>&nbsp&nbsp 天猫规则</a>
+                            </div>
+                            <div style="border-bottom: 1px dashed gray;margin-bottom: 5px;line-height: 20px;">
+                                <p style="text-align: left;line-height: 16px;font-weight: bold;">帮助：</p>
+                                <a>帮助中心 &nbsp&nbsp 问商友</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a>网站导航</a>
+                        <span class="b"></span>
+                        <div class="nav-pannel nav-dir">
+                            <div id="site-direct">
+                                <div id="hot-recommand">
+                                    <p style="text-align: left;font-size: 16px;font-weight: bold;color: orange;">热点推荐 &nbsp Hot</p>
+                                    <ul >
+                                        <li class="direct-li">天猫超市</li>
+                                        <li class="direct-li">天猫超市</li>
+                                        <li class="direct-li">天猫超市</li>
+                                        <li class="direct-li">天猫超市</li>
+                                        <li class="direct-li">天猫超市</li>
+                                        <li class="direct-li">天猫超市</li>
+                                        <li class="direct-li">天猫超市</li>
+                                        <li class="direct-li">天猫超市</li>
+                                        <li class="direct-li">天猫超市</li>
+                                        <li class="direct-li">天猫超市</li>
+                                        <li class="direct-li">天猫超市</li>
+                                        <li class="direct-li">天猫超市</li>
+                                        <li class="direct-li">天猫超市</li>
+                                        <li class="direct-li">天猫超市</li>
+                                        <li class="direct-li">天猫超市</li>
+                                    </ul>
+                                </div>
+                                <div class="site-separator"></div>
+                                <div id="market">
+                                    <p style="text-align: left;font-size: 16px;font-weight: bold;color: blue;">行业市场 &nbsp Market</p>
+                                    <ul style="text-align: left;">
+                                        <li class="direct-li">男装</li>
+                                        <li class="direct-li">男装</li>
+                                        <li class="direct-li">男装</li>
+                                        <li class="direct-li">男装</li>
+                                        <li class="direct-li">男装</li>
+                                        <li class="direct-li">男装</li>
+                                        <li class="direct-li">男装</li>
+                                        <li class="direct-li">男装</li>
+                                        <li class="direct-li">男装</li>
+                                        <li class="direct-li">男装</li>
+                                        <li class="direct-li">男装</li>
+                                        <li class="direct-li">男装</li>
+                                        <li class="direct-li">男装</li>
+                                        <li class="direct-li">男装</li>
+                                        <li class="direct-li">男装</li>
+                                    </ul>
+                                </div>
+                                <div class="site-separator"></div>
+                                <div id="service-guide">
+                                    <p style="text-align: left;font-size: 16px;font-weight: bold;color: grey;">服务指南 &nbsp Help</p>
+                                    <ul style="text-align: left;">
+                                        
+                                        <li class="direct-li">男装</li>
+                                        <li class="direct-li">男装</li>
+                                        <li class="direct-li">男装</li>
+                                        <li class="direct-li">男装</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+    </div>
+    <div id="content">
+
+        <div id="search">
+            <input id="sear_border" type="text" placeholder="搜索 天猫 商品 店铺/品牌/商店">
+            <button type="submit">搜索</button>
+        </div>
+        <img class="tm_logo" src="img/TB1MaLKRXXXXXaWXFXXXXXXXXXX-480-260.png">
+        <div id="direct">
+            <!-- <div class="mall_cate"> -->
+            <span class="mall_cate">商品分类</span>
+            <!-- </div> -->
+            <a class="cate_icon">
+                <img style="width: 100px;height: 30px;" src="img/TB1t5ObaBxRMKJjy0FdXXaifFXa-200-60.png">
+            </a>
+            <a class="cate_icon">
+                <img style="width: 100px;height: 30px;" src="img/TB1ztBlaMMPMeJjy1XbXXcwxVXa-200-60.png">
+            </a>
+            <a class="cate_icon">天猫会员</a>
+            <a class="cate_icon">电器城</a>
+            <a class="cate_icon">喵鲜生</a>
+            <a class="cate_icon">医药馆</a>
+            <a class="cate_icon">营业厅</a>
+            <a class="cate_icon">魅力惠</a>
+            <a class="cate_icon">飞猪旅行</a>
+            <a class="cate_icon">苏宁易购</a>
+        </div>
+        <div id="introduction">
+            <div id="sub_nav">
+                <div id="product_cate">
+                    <ul>
+                        <li><a>女装/内衣</a></li>
+                        <li><a>男装/运动户外</a></li>
+                        <li><a>男装/运动户外</a></li>
+                        <li><a>女装/内衣</a></li>
+                        <li><a>男装/运动户外</a></li>
+                        <li><a>女装/内衣</a></li>
+                        <li><a>男装/运动户外</a></li>
+                        <li><a>女装/内衣</a></li>
+                        <li><a>男装/运动户外</a></li>
+                        <li><a>女装/内衣</a></li>
+                        <li><a>男装/运动户外</a></li>
+                        <li><a>女装/内衣</a></li>
+                        <li><a>男装/运动户外</a></li>
+                        <li><a>女装/内衣</a></li>
+                        <li><a>男装/运动户外</a></li>
+                        <li><a>男装/运动户外</a></li>
+                    </ul>
+                </div>
+                <div class="cate_pannel">
+                    <div id="cate-desc-area">
+                        <div id="hot-word-line">
+                            <div class="title-text">
+                                <span>当季流行&nbsp ></span>
+                            </div>
+                            <div class="line-con">
+
+                                <a class="bw">商场同款</a>
+                                <a class="bw blue">当季新品</a>
+                                <a class="bw blue">羽绒服</a>
+                                <a class="bw blue">潮流卫衣</a>
+                                <a class="bw">牛仔衬衫</a>
+                                <a class="bw blue">修身夹克</a>
+                                <a class="bw blue">保暖棉服</a><br>
+                                <a class="bw">温暖的针织衫</a>
+                                <a class="bw">修身西服</a>
+                                <a class="bw blue">秋冬风衣</a>
+                                <a class="bw blue">束脚裤</a>
+                                <a class="bw">破洞牛仔裤</a>
+                                <a class="bw blue">跑步机</a>
+                                <a class="bw blue">休闲鞋</a><br>
+                                <a class="bw blue">篮球鞋</a>
+                                <a class="bw blue">自行车</a>
+                                <a class="bw">平衡车</a>
+                                <a class="bw">帆布鞋</a>
+                                <a class="bw">运动套装</a>
+                                <a class="bw blue">运动卫衣</a>
+                                <a class="bw blue">鱼竿</a>
+                                <a class="bw blue">冲锋衣</a><br>
+                                <a class="bw blue">跑步机</a>
+                                <a class="bw blue">电动车</a>
+                            </div>
+                        </div>
+                        <div id="hot-word-line">
+                            <div class="title-text">
+                                <span>男士外套&nbsp ></span>
+                            </div>
+                            <div class="line-con">
+
+                                <a class="bw">夹克</a>
+                                <a class="bw blue">单西</a>
+                                <a class="bw blue">棒球服</a>
+                                <a class="bw blue">棉衣</a>
+                                <a class="bw">毛呢大衣</a>
+                                <a class="bw blue">风衣</a>
+                                <a class="bw blue">西服套装</a>
+                                <a class="bw">羽绒服</a>
+                                <a class="bw">皮衣</a><br>
+                                <a class="bw blue">运动服</a>
+                                <a class="bw blue">工装外套</a>
+                                <a class="bw">针织开衫</a>
+                                <a class="bw blue">马甲</a>
+                            </div>
+                        </div>
+                        <div id="hot-word-line">
+                            <div class="title-text">
+                                <span>男士内搭&nbsp ></span>
+                            </div>
+                            <div class="line-con">
+
+                                <a class="bw">短袖T恤</a>
+                                <a class="bw blue">POLO衫</a>
+                                <a class="bw blue">短袖衬衫</a>
+                                <a class="bw blue">背心</a>
+                                <a class="bw">卫衣</a>
+                                <a class="bw blue">针织衫/毛衣</a>
+                                <a class="bw blue">长袖衬衫</a><br>
+                                <a class="bw">长袖T恤</a>
+                            </div>
+                        </div>
+                        <div id="hot-word-line">
+                            <div class="title-text">
+                                <span>男士裤装&nbsp ></span>
+                            </div>
+                            <div class="line-con">
+
+                                <a class="bw">小脚裤</a>
+                                <a class="bw blue">9分裤</a>
+                                <a class="bw blue">短裤</a>
+                                <a class="bw blue">休闲裤</a>
+                                <a class="bw">牛仔裤</a>
+                                <a class="bw blue">针织裤</a>
+                                <a class="bw blue">西裤</a>
+                                <a class="bw">运动裤</a>
+                                <a class="bw">工装裤</a><br>
+                            </div>
+                        </div>
+                        <div id="hot-word-line">
+                            <div class="title-text">
+                                <span>特色男装&nbsp ></span>
+                            </div>
+                            <div class="line-con">
+
+                                <a class="bw">潮牌</a>
+                                <a class="bw blue">中老年</a>
+                                <a class="bw blue">加大码</a>
+                                <a class="bw blue">职场精英</a>
+                                <a class="bw">中国风</a>
+                                <a class="bw blue">情侣装</a>
+                            </div>
+                        </div>
+                        <div id="hot-word-line">
+                            <div class="title-text">
+                                <span>运&nbsp动&nbsp鞋&nbsp&nbsp ></span>
+                            </div>
+                            <div class="line-con">
+
+                                <a class="bw">跑步鞋</a>
+                                <a class="bw blue">运动鞋</a>
+                                <a class="bw blue">板鞋</a>
+                                <a class="bw blue">潮鞋</a>
+                                <a class="bw">休闲鞋</a>
+                                <a class="bw blue">篮球鞋</a>
+                                <a class="bw blue">足球鞋</a>
+                            </div>
+                        </div>
+                        <div id="hot-word-line">
+                            <div class="title-text">
+                                <span>运&nbsp动&nbsp服&nbsp&nbsp ></span>
+                            </div>
+                            <div class="line-con">
+
+                                <a class="bw">短袖T恤</a>
+                                <a class="bw blue">运动裤</a>
+                                <a class="bw blue">运动内衣</a>
+                                <a class="bw blue">速干T恤</a>
+                                <a class="bw">运动POLO</a>
+                                <a class="bw blue">运动卫衣</a>
+                                <a class="bw blue">运动套装</a><br>
+                                <a class="bw">运动短裤</a>
+                                <a class="bw">健身服</a><br>
+                                <a class="bw blue">运动夹克</a>
+                            </div>
+                        </div>
+                        <div id="hot-word-line">
+                            <div class="title-text">
+                                <span>户外鞋服&nbsp ></span>
+                            </div>
+                            <div class="line-con">
+
+                                <a class="bw">冲锋衣</a>
+                                <a class="bw blue">抓绒衣</a>
+                                <a class="bw blue">登山鞋</a>
+                                <a class="bw blue">户外休闲衣</a>
+                                <a class="bw">军迷</a>
+                                <a class="bw blue">钓鱼服</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="cate_brandlogo">
+                        <img src="img/1.jpg" style="width: 189px;height: 87px;">
+                    </div>
+                </div>
+
+                <div id="banner">
+                    <div id="banner-pic">
+                        <img id="num-1" src="img/2.jpg">
+                        <img id="num-2" src="img/3.jpg">
+                        <img id="num-3" src="img/4.jpg">
+                        <img id="num-4" src="img/5.webp">
+                    </div>
+                    <div id="btns">
+                        <ul>
+                            <li class="dot"></li>
+                            <li class="dot"></li>
+                            <li class="dot"></li>
+                            <li class="dot"></li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <div id="main-body">
+        <div id="show-product">
+            <div id="brand-entrance">
+                <div id="brand-sale">
+                    <div id="sale-title" style="background-color: white;">品牌闪购<span style="font-size: 14px;">&nbsp BAND
+                            &nbsp SALE &nbsp</span> ></div>
+                    <a><img src="img/2-1.webp" style="width: 234px;height: 316px;"></a>
+                </div>
+                <div id="brand-channel">
+                    <div id="channel-title" style="background-color: white;">聚名品<span style="font-size: 14px;">&nbsp
+                            BAND &nbsp CHANNEL &nbsp</span> ></div>
+
+                    <a><img src="img/2-2.webp" style="width: 480px;height: 316px;"></a>
+                </div>
+                <div id="brand-activity">
+                    <div id="channel-title" style="background-color: white;">品牌活动<span style="font-size: 14px;">&nbsp
+                            BAND &nbsp ACTIVITY &nbsp</span> ></div>
+                    <a><img src="img/2-3.webp" style="width: 485px;height: 316px;"></a>
+                </div>
+            </div>
+            <div id="hot-brand-icon">
+                <a><img style="width:1232px;height: 327px;" src="img/5.jpg"></a>
+            </div>
+            <div id="tm-market">
+                <img src="img/7.png">
+                <div id="super-brand">
+                    <img src="img/8.jpg" style="width:235px;height:618px">
+                </div>
+
+                <div id="hot-brand">
+                    <div class="icon-item" style="width: 484px;height: 302px;font-size: 0px;background: white;">
+                        <div id="bt-a" bc="jrfq" class="ad-b active">
+                            今日疯抢
+                        </div>
+                        <div id="bt-b" bc="lfz" class="ad-b"  >
+                            量贩装
+                        </div>
+                        <img id="sub-spanner" src="img/milk.jpg" >
+                        <div id="arrow">
+                            <img src="img/10.png" style="float: left;;margin-left: 10px;margin-top: 10px;">
+                            <a id="jingxuan" style="color: green; font-weight: bold;font-size: 24px;margin-left: 5px">今日疯抢</a>
+                            <p style="color:black;font-size: 16px;">第二件0元</p>
+                        </div>
+
+                    </div>
+                    <div class="icon-item" style="background: white;">
+                        <img src="img/18.jpg" style="width: 185px;height: 185px;">
+                        <p><a>【优选顺丰包邮】红米K30至尊纪念版手机K30系列120Hz刷新率5G</a></p>
+                        <p><a style="color: red;font-weight: bolder;">￥2149</a></p>
+                    </div>
+                   <div class="icon-item" style="background: white;">
+                    <img src="img/18.jpg" style="width: 185px;height: 185px;">
+                    <p><a>【优选顺丰包邮】红米K30至尊纪念版手机K30系列120Hz刷新率5G</a></p>
+                    <p><a style="color: red;font-weight: bolder;">￥2149</a></p>
+                    </div>
+                    <div class="icon-item" style="background: white;">
+                        <img src="img/18.jpg" style="width: 185px;height: 185px;">
+                        <p><a>【优选顺丰包邮】红米K30至尊纪念版手机K30系列120Hz刷新率5G</a></p>
+                        <p><a style="color: red;font-weight: bolder;">￥2149</a></p>
+                    </div>
+                    <div class="icon-item" style="background: white;">
+                        <img src="img/18.jpg" style="width: 185px;height: 185px;">
+                        <p><a>【优选顺丰包邮】红米K30至尊纪念版手机K30系列120Hz刷新率5G</a></p>
+                        <p><a style="color: red;font-weight: bolder;">￥2149</a></p>
+                    </div>
+                    <div class="icon-item" style="background: white;">
+                        <img src="img/18.jpg" style="width: 185px;height: 185px;">
+                        <p><a>【优选顺丰包邮】红米K30至尊纪念版手机K30系列120Hz刷新率5G</a></p>
+                        <p><a style="color: red;font-weight: bolder;">￥2149</a></p>
+                    </div>
+                    <div class="icon-item" style="background: white;">
+                        <img src="img/18.jpg" style="width: 185px;height: 185px;">
+                        <p><a>【优选顺丰包邮】红米K30至尊纪念版手机K30系列120Hz刷新率5G</a></p>
+                        <p><a style="color: red;font-weight: bolder;">￥2149</a></p>
+                    </div>
+
+                </div>
+
+            </div>
+            <div id="tm-internation" style="text-align: center;margin-bottom: 20px;margin-left: -165px;margin-top: 20px;">
+                <img style="width:1620px;height: 90px;" src="img/19.jpg">
+            </div>
+            <div id="fashion-beautity">
+                <div class="guess-like">
+                    猜你喜欢
+                </div>
+                <div id="product-list">
+                    <div class="p-item">
+                        <img src="img/60.png">
+                        <div class="pri-des">
+                            <div class="des"><a>零师傅 零食大礼包礼盒休闲食品充饥夜宵整箱吃的女网红美食小吃</a></div>
+                            <div class="pri">
+                            <a>￥29.8</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-item">
+                        <img src="img/60.png">
+                        <div class="pri-des">
+                            <div class="des"><a>零师傅 零食大礼包礼盒休闲食品充饥夜宵整箱吃的女网红美食小吃</a></div>
+                            <div class="pri">
+                            <a>￥29.8</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-item">
+                        <img src="img/60.png">
+                        <div class="pri-des">
+                            <div class="des"><a>零师傅 零食大礼包礼盒休闲食品充饥夜宵整箱吃的女网红美食小吃</a></div>
+                            <div class="pri">
+                            <a>￥29.8</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-item">
+                        <img src="img/60.png">
+                        <div class="pri-des">
+                            <div class="des"><a>零师傅 零食大礼包礼盒休闲食品充饥夜宵整箱吃的女网红美食小吃</a></div>
+                            <div class="pri">
+                            <a>￥29.8</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-item">
+                        <img src="img/60.png">
+                        <div class="pri-des">
+                            <div class="des"><a>零师傅 零食大礼包礼盒休闲食品充饥夜宵整箱吃的女网红美食小吃</a></div>
+                            <div class="pri">
+                            <a>￥29.8</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-item">
+                        <img src="img/60.png">
+                        <div class="pri-des">
+                            <div class="des"><a>零师傅 零食大礼包礼盒休闲食品充饥夜宵整箱吃的女网红美食小吃</a></div>
+                            <div class="pri">
+                            <a>￥29.8</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-item">
+                        <img src="img/60.png">
+                        <div class="pri-des">
+                            <div class="des"><a>零师傅 零食大礼包礼盒休闲食品充饥夜宵整箱吃的女网红美食小吃</a></div>
+                            <div class="pri">
+                            <a>￥29.8</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-item">
+                        <img src="img/60.png">
+                        <div class="pri-des">
+                            <div class="des"><a>零师傅 零食大礼包礼盒休闲食品充饥夜宵整箱吃的女网红美食小吃</a></div>
+                            <div class="pri">
+                            <a>￥29.8</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-item">
+                        <img src="img/60.png">
+                        <div class="pri-des">
+                            <div class="des"><a>零师傅 零食大礼包礼盒休闲食品充饥夜宵整箱吃的女网红美食小吃</a></div>
+                            <div class="pri">
+                            <a>￥29.8</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-item">
+                        <img src="img/60.png">
+                        <div class="pri-des">
+                            <div class="des"><a>零师傅 零食大礼包礼盒休闲食品充饥夜宵整箱吃的女网红美食小吃</a></div>
+                            <div class="pri">
+                            <a>￥29.8</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-item">
+                        <img src="img/60.png">
+                        <div class="pri-des">
+                            <div class="des"><a>零师傅 零食大礼包礼盒休闲食品充饥夜宵整箱吃的女网红美食小吃</a></div>
+                            <div class="pri">
+                            <a>￥29.8</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-item">
+                        <img src="img/60.png">
+                        <div class="pri-des">
+                            <div class="des"><a>零师傅 零食大礼包礼盒休闲食品充饥夜宵整箱吃的女网红美食小吃</a></div>
+                            <div class="pri">
+                            <a>￥29.8</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-item">
+                        <img src="img/60.png">
+                        <div class="pri-des">
+                            <div class="des"><a>零师傅 零食大礼包礼盒休闲食品充饥夜宵整箱吃的女网红美食小吃</a></div>
+                            <div class="pri">
+                            <a>￥29.8</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+       
+
+    </div>
+    </div>
+</body>
+<script>
+    //二级导航栏鼠标悬浮显示
+    $("#product_cate a").hover(function () {
+        $(".cate_pannel").css("display", "block");
+    }, function () {
+        $(".cate_pannel").css("display", "none");
+    })
+    //轮播图
+    var arr = ["2.jpg", "3.jpg", "4.jpg", "5.jpg"];
+    var mytimer = null;
+    var cur = 0;
+    function bindingEvent() {
+        $("#banner-pic img").mouseenter(function () {
+            stopPlay();
+        });
+        $("#banner-pic img").mouseleave(function () {
+            startPlay();
+        });
+
+        $("#banner li").click(function () {
+            gotoImg($("#banner li").index(this))
+        });
+    };
+    //自动播放
+    function startPlay() {
+        mytimer = setInterval(() => {
+            //下一张图片
+            let out = cur;
+            cur++;
+            if (cur > arr.length - 1) {
+                cur = 0
+            }
+            let $img = $("#banner img");
+            //当前图片隐藏
+            $img.eq(out).animate({ "opacity": 0 }, 500);
+            //下一张图片显示
+            $img.eq(cur).animate({ "opacity": 1 }, 500);
+            //指示方块变化
+            $("#banner li").eq(cur).css({ "background": "white" }).siblings().css({ "background": "grey" });
+
+        }, 3000);
+    };
+    //停止播放
+    function stopPlay() {
+        window.clearInterval(mytimer);
+    }
+    function transfer(){
+        var hottimer = setInterval(function(){
+            if($("#bt-a").hasClass("active")){
+                $("#bt-a").removeClass("active");
+                $("#bt-b").addClass("active");
+                $("#sub-spanner").attr("src","img/11.jpg")
+            }else {
+                $("#bt-a").addClass("active");
+                $("#bt-b").removeClass("active");
+                $("#sub-spanner").attr("src","img/milk.jpg")
+            }
+            
+        },2000)
+    };
+    $(function () {
+        //初始化指示点
+
+        //绑定事件
+        bindingEvent();
+        //开始播放
+        startPlay();
+        transfer();
+    });
+    //今日疯抢
+    
+</script>
+
+</html>
