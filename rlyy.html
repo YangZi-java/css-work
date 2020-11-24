@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link type="text/css" rel="stylesheet" href="../css/index.css">
+    <link type="text/css" rel="stylesheet" href="../css/banner.css">
+    <link type="text/css" rel="stylesheet" href="../css/info.css">
+    <link type="text/css" rel="stylesheet" href="../css/productlist.css">
+    <link type="text/css" rel="stylesheet" href="../css/foot.css">
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+    <link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+        a:hover {
+            cursor: pointer;
+            color: aliceblue;
+        }
+
+        body {
+            font-family: "PingFang SC", "microsoft yahei";
+        }
+
+        .appear-up {
+            margin-top: -30px;
+        }
+    </style>
+    <script type="text/javascript" src="../js/index.js"></script>
+    <script type="text/javascript">
+        //  bootstrap 轮播图控制速度
+        $("#myCarousel").carousel({
+            interval: 1000
+        });
+        //导航菜单
+        // $(function(){
+        //     $(".nav-head-right-li [order='1']").hover(function(){
+        //         $('.nav-example').slideDown('fast');
+        //     },function(){
+        //         $('.nav-example').slideUp('fast')
+        //     })
+        // });
+        $(function () {
+            $(".nav-head-right-li[order='1']").hover(function () {
+                $('.nav-example').slideDown('slow');
+            }, function () {
+                $('.nav-example').slideUp('slow')
+            })
+        });
+        $(function () {
+            $(".nav-head-right-li[order='3']").hover(function () {
+                $('.nav-service').slideDown('slow');
+            }, function () {
+                $('.nav-service').slideUp('slow')
+            })
+        });
+        $(function () {
+            $(".nav-head-right-li[order='6']").hover(function () {
+                $('.nav-news').slideDown('slow');
+            }, function () {
+                $('.nav-news').slideUp('slow')
+            })
+        });
+        $(function () {
+            $(".nav-head-right-li[order='7']").hover(function () {
+                $('.nav-about').slideDown('slow');
+            }, function () {
+                $('.nav-about').slideUp('slow')
+            })
+        });
+        //产品矩阵动画
+        // $(function () {
+        //     $('#prodesc-1').hover(function () {
+        //         $("#prodesc-1").css("background-color", "blue");
+        //         $("#prodesc-1").css("opacity", "0.3");
+        //         $("#prodesc-1").children(".prodesc-p2").show();
+        //         $("#prodesc-1").children('.prodesc-a').css("opacity", '1');
+        //         $("#prodesc-1").children("#prodesc-spilt").hide();
+        //         // $("#prodesc-1").children().animate({ top: "-30" }, 5000);
+        //         $("#prodesc-1").find("img").css("margin-top", "30px");
+
+        //     }, function () {
+        //         $("#prodesc-1").css("background-color", "transparent");
+        //         $("#prodesc-1").css("opacity", "1");
+        //         $("#prodesc-1").children(".prodesc-p2").hide();
+        //         $("#prodesc-1").children('.prodesc-a').css("opacity", '0');
+        //         $("#prodesc-1").children("#prodesc-spilt").show();
+        //         // $("#prodesc-1").children().animate({ top: "+=30" }, 5000);
+        //         $("#prodesc-1").find("img").css("margin-top", "100px");
+        //     })
+        // });
+        // $(function () {
+        //     $('#prodesc-2').hover(function () {
+        //         $("#prodesc-2").css("background-color", "blue");
+        //         $("#prodesc-2").css("opacity", "0.3");
+        //         $("#prodesc-2").children(".prodesc-p2").show();
+        //         $("#prodesc-2").children('.prodesc-a').css("opacity", '2');
+        //         $("#prodesc-2").children("#prodesc-spilt").hide();
+        //         $("#prodesc-2").children().animate({ top: "-=30" }, 5000);
+        //         $("#prodesc-2").find("img").css("margin-top", "30px");
+
+        //     }, function () {
+        //         $("#prodesc-2").css("background-color", "transparent");
+        //         $("#prodesc-2").children(".prodesc-p2").hide();
+        //         $("#prodesc-2").children('.prodesc-a').css("opacity", '0');
+        //         $("#prodesc-2").children("#prodesc-spilt").show();
+        //         $("#prodesc-2").children().animate({ top: "+=30" }, 5000);
+        //         $("#prodesc-2").find("img").css("margin-top", "100px");
+        //     })
+        // });
+        // $(function () {
+        //     $('#prodesc-3').hover(function () {
+        //         $("#prodesc-3").css("background-color", "blue");
+        //         $("#prodesc-3").css("opacity", "0.3");
+        //         $("#prodesc-3").children(".prodesc-p2").show();
+        //         $("#prodesc-3").children('.prodesc-a').css("opacity", '3');
+        //         $("#prodesc-3").children("#prodesc-spilt").hide();
+        //         $("#prodesc-3").children().animate({ top: "-=30" }, 5000);
+        //         $("#prodesc-3").find("img").css("margin-top", "30px");
+
+
+
+        //     }, function () {
+        //         $("#prodesc-3").css("background-color", "transparent");
+        //         $("#prodesc-3").children(".prodesc-p2").hide();
+        //         $("#prodesc-3").children('.prodesc-a').css("opacity", '0');
+        //         $("#prodesc-3").children("#prodesc-spilt").show();
+        //         $("#prodesc-3").children().animate({ top: "+=30" }, 5000);
+        //         $("#prodesc-3").find("img").css("margin-top", "100px");
+        //     })
+        // });
+        // $(function () {
+        //     $('#prodesc-4').hover(function () {
+        //         $("#prodesc-4").css("background-color", "blue");
+        //         $("#prodesc-4").css("opacity", "0.3");
+        //         $("#prodesc-4").children(".prodesc-p2").show();
+        //         $("#prodesc-4").children('.prodesc-a').css("opacity", '4');
+        //         $("#prodesc-4").children("#prodesc-spilt").hide();
+        //         $("#prodesc-4").children().animate({ top: "-=30" }, 5000);
+        //         $("#prodesc-4").find("img").css("margin-top", "30px");
+        //     }, function () {
+        //         $("#prodesc-4").css("background-color", "transparent");
+        //         $("#prodesc-4").children(".prodesc-p2").hide();
+        //         $("#prodesc-4").children('.prodesc-a').css("opacity", '0');
+        //         $("#prodesc-4").children("#prodesc-spilt").show();
+        //         $("#prodesc-4").children().animate({ top: "+=30" }, 5000);
+        //         $("#prodesc-4").find("img").css("margin-top", "100px");
+        //     })
+        // });
+    </script>
+</head>
+
+<body>
+    <div id="head" style="height: 450px;">
+        <!-- 导航栏start -->
+        <div id="nav-head">
+            <a id="logo" href="http://www.ronglianyiyun.com/"></a>
+            <ul class="nav-head-right">
+                <li class="nav-head-right-li" order='1' style="width: 31;">首页</li>
+                <li class="nav-head-right-li" order='1' style="width:64" id="nav-head-right-li-1">咨询服务
+                    <ul class="nav-example">
+                        <li class="nav-example-li"><a href="http://www.baidu.com">信息科技风险管理咨询</a></li>
+                        <li class="nav-example-li"><a href="http://www.baidu.com">开源治理能力评估</a></li>
+                        <li class="nav-example-li"><a href="http://www.baidu.com">中小银行云上系统</a></li>
+                        <li class="nav-example-li"><a href="http://www.baidu.com">信创兼容性咨询</a></li>
+                    </ul>
+                </li>
+                <li class="nav-head-right-li" order='3' style="width: 64;" id="nav-head-right-li-1">
+                    解决方案
+                    <ul class="nav-service">
+                        <li class="nav-service-li"><a href="http://www.baidu.com">云容灾</a></li>
+                        <li class="nav-service-li"><a href="http://www.baidu.com">可信安全众测</a></li>
+                        <li class="nav-service-li"><a href="http://www.baidu.com">互联网业务系统上云</a></li>
+                    </ul>
+                </li>
+                <li class="nav-head-right-li" order='4' style="width:111;" id="nav-head-right-li-3">金融Saas产品</li>
+                <li class="nav-head-right-li" order='5' style="width: 80;" id="nav-head-right-li-4">基础云服务</li>
+                <li class="nav-head-right-li" order='6' style="width: 80;" id="nav-head-right-li-5">案例及合作
+                    <ul class="nav-news">
+                        <li class="nav-news-li"><a href="http://www.baidu.com">客户案例</a></li>
+                        <li class="nav-news-li"><a href="http://www.baidu.com">融联资讯</a></li>
+                    </ul>
+                </li>
+                <li class="nav-head-right-li" order='7' style="width: 64;" id="nav-head-right-li-6">关于我们
+                    <ul class="nav-about">
+                        <li class="nav-about-li"><a href="http://www.baidu.com">公司介绍</a></li>
+                        <li class="nav-about-li"><a href="http://www.baidu.com">联系我们</a></li>
+                        <li class="nav-about-li"><a href="http://www.baidu.com">招贤纳士</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <!-- 导航栏end -->
+        <!-- 轮播图 start-->
+        <!-- <div class="container">
+            <div class="list" style="left:0px;"> -->
+        <!--<img src="../static/image/photo1.jpg" alt="5"/>-->
+        <!-- <img src="../img/banner1.jpg" alt="1" />
+                <img src="../img/banner1.jpg" alt="1" />
+                <img src="../img/banner3.jpg" alt="3" />
+                <img src="../img/banner4.jpg" alt="4" />
+            </div> -->
+
+        <!--<img src="../static/image/banner.jpg" alt="1"/>-->
+        <!-- </div> -->
+        <!-- 方形指示框 -->
+        <!-- <div class="pointer">
+            <span index="1" class="on"></span>
+            <span index="1"></span>
+            <span index="3"></span>
+            <span index="4"></span>
+        </div> -->
+        <!-- 上一页 下一页 -->
+
+        <!-- <a href="#" rel="external nofollow" style="font-size: 50px;" class="arrow left">&lt;</a>
+        <a href="#" rel="external nofollow" style="font-size: 50px;" class="arrow right">&gt;</a> -->
+        <div id="myCarousel" class="carousel slide" style="top: -50px;position: relative;">
+            <!-- 轮播（Carousel）指标 -->
+            <ol class="carousel-indicators" style="top: 300px;">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+                <li data-target="#myCarousel" data-slide-to="3"></li>
+            </ol>
+
+            <!-- 轮播（Carousel）项目 -->
+            <div class="carousel-inner">
+                <div class="item active">
+                    <img src="../img/banner1.jpg" style="left: -168px;height:  450px; width: 100%;" alt="First slide">
+                    <div class="banner-desc">
+                        <p class="bannner-desc-p1">融智慧 连未来</p>
+                        <p class="bannner-desc-p2">开启中国金融新时代</p>
+                        <a class="bannner-desc-p3">了解更多</a>
+                    </div>
+
+                </div>
+                <div class="item">
+                    <img src="../img/banner1.jpg" style="left: -168px;height:  450px;width: 100%;" alt="Second slide">
+                    <div class="banner-desc">
+                        <p class="bannner-desc-p1">客户案例</p>
+                        <p class="bannner-desc-p2">用户至上 服务第一</p>
+                        <a class="bannner-desc-p3">了解更多</a>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="../img/banner3.jpg" style="left: -168px;height:  450px;width: 100%;" alt="Third slide">
+                    <div class="banner-desc">
+                        <p class="bannner-desc-p1">信息科技风险管理咨询</p>
+                        <p class="bannner-desc-p2">提供具有行业属性的金融云服务，助力金融机构构建双模IT，推动数字化转型</p>
+                        <a class="bannner-desc-p3">了解更多</a>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="../img/banner4.jpg" style="left: -168px;height: 450px;width: 100%;" alt="Fourth slide">
+                    <div class="banner-desc">
+                        <p class="bannner-desc-p1">基础云服务</p>
+                        <p class="bannner-desc-p2">提供具有行业属性的金融云服务，助力金融机构构建双模IT，推动数字化转型</p>
+                        <a class="bannner-desc-p3">了解更多</a>
+                    </div>
+                </div>
+            </div>
+            <!-- 轮播（Carousel）导航 -->
+            <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+            <div id="banner-foot">
+                <div id="banner-foot-container">
+                    <div class="banner-spilt"></div>
+                    <div class="banner-icon">
+                        <img src="../img/yjh.svg" style="width: 40px;height: 40px;"> 
+                        <spanc style="color: aliceblue;">&nbsp &nbsp银宝监会指导</span>
+                    </div>
+                    <div class="banner-spilt"></div>
+                    <div class="banner-icon">
+                        <img src="../img/gdyh.svg" style="width: 40px;height: 40px;"> 
+                        <span style="color: aliceblue;">&nbsp &nbsp 16家银行股东</span>
+                    </div>
+                    <div class="banner-spilt"></div>
+                    <div class="banner-icon">
+                        <img src="../img/gongxinli.svg" style="width: 40px;height: 40px;"> 
+                        <span style="color: aliceblue;">&nbsp &nbsp 天然公信力</span>
+                    </div>
+                    <div class="banner-spilt"></div>
+                </div>
+            </div>
+       
+        </div>
+        
+        
+    </div>
+    <!-- 轮播图end -->
+    <!-- 公司信息 -->
+    <div id="info">
+        <p style="font-size: 31px;text-align: center;">公司背景</p>
+        <p style="font-size: 14px; margin-top: 60px;text-align: center;">
+            融联易云金融信息服务（北京）有限公司成立于1017年9月，是依据《国务院关于积极推进“互联网+”行动的指导意见》国发〔1015〕40号文和“互联网+”行动部联席会议（1015年11月）决议，在银保监会（原银监会）“宏观指导、政策支持、风险监管”的指导原则下，由十六家银行联合发起设立的金融科技服务机构，也是业内唯一一家具有全部国有大型银行、多数股份制银行和部分城商行联合背景的科技服务机构
+        </p>
+        <a style="margin:60px auto 0 ;font-size: 14px;display: block;text-align: center;border-bottom: 1.5px solid;padding-bottom: 5px;width: 100px;"
+            href="http://www.baidu.com">了解详情
+            <img src="../img/jiantou.svg" style="width: 10px">
+        </a>
+        <div style="text-align: center;">
+            <img style="margin: 60px auto 0 auto;width: 710px;" src="../img/logo.jpg">
+        </div>
+        <p style="font-size: 31px;text-align: center;margin: 60px auto 0;">公司定位</p>
+        <p style="font-size: 14px; margin-top: 60px;text-align: center;">
+            融联易云定位于提供金融科技公共服务，以促进金融机构间合作，解决行业共性问题为导向，通过平台化战略构建金融机构之间、金融机构与其他社会机构之间、金融机构与公众之间的沟通桥梁，为金融机构、社会大众、监管部门和政府机关，提供行业治理、普惠金融、智能监管和智慧金融等公共服务，激发市场活力，推动“互联网+金融”协同创新。
+        </p>
+        <a style="margin:60px auto 0;font-size: 14px;display: block;text-align: center;border-bottom: 1.5px solid;padding-bottom: 5px;width: 100px;"
+            href="http://www.baidu.com">了解详情
+            <img src="../img/jiantou.svg" style="width: 10px">
+        </a>
+        <p style="font-size: 31px;text-align: center;margin-top: 60px;">产品矩阵</p>
+
+
+    </div>
+    <div id="proList">
+        <div id="proList-div">
+            <div class="proList-li">
+                <img src="../img/fft.jpg" id="proList-li-img">
+                <div id="prodesc-1" class="prodesc">
+                    <img class="img-consult" src="../img/icon_zixunfuwu.png"
+                        style="width: 65px;height: 66px;">
+                    <div id="prodesc-spilt"></div>
+                    <p class="prodesc-p1">咨询服务</p>
+                    <p class="prodesc-p2">提供适合金融行业信息化建设的专业咨询服务。</p>
+                    <a class="prodesc-a" href="/home/web/product/consult.html">信息科技风险管理咨询</a>
+                    <a class="prodesc-a" href="/home/web/product/zxfw/kyzl.html">开源治理能力评估</a>
+                    <a class="prodesc-a" href="/home/web/product/zxfw/syzx.html">中小银行上云咨询</a>
+                    <a class="prodesc-a" href="/home/web/product/zxfw/jrxpg.html">信创兼容性咨询</a>
+                </div>
+
+            </div>
+            <div class="proList-li">
+                <img src="../img/xxkjfxglzx.jpg" id="proList-li-img">
+                <div id="prodesc-2" class="prodesc">
+                    <img class="img-consult" src="../img/icon_jiejuefangan.png"
+                        style="width: 65px;height: 66px;">
+                    <div id="prodesc-spilt" style="z-index: 99;"></div>
+                    <p class="prodesc-p1">解决方案</p>
+                    <p class="prodesc-p2">提供贴合金融场景的解决方案，助力金融机构快速实现互联网业务上云和云端容灾。</p>
+                    <a class="prodesc-a" href="/home/web/product/consult.html">云容灾</a>
+                    <a class="prodesc-a" href="/home/web/product/zxfw/kyzl.html">可信安全众测</a>
+                    <a class="prodesc-a" href="/home/web/product/zxfw/syzx.html">互联网业务系统上云</a>
+                </div>
+
+            </div>
+            <div class="proList-li">
+                <img  src="../img/jrhyy.jpg" id="proList-li-img">
+                <div id="prodesc-3" class="prodesc">
+                    <img class="img-consult" src="../img/icon_jinrongsaaschanpin.png"
+                        style="width: 65px;height: 66px;">
+                    <div id="prodesc-spilt" style="z-index: 99;"></div>
+                    <p class="prodesc-p1">金融Saas产品</p>
+                    <p class="prodesc-p2">为金融机构提供灵活的金融SaaS产品，助力金融机构满足监管合规。</p>
+                    <a class="prodesc-a" href="/home/web/product/consult.html">业务连续性管理（BCMS）</a>
+                    <a class="prodesc-a" href="/home/web/product/zxfw/kyzl.html">融数聚信息服务平台</a>
+                    <a class="prodesc-a" href="/home/web/product/zxfw/syzx.html">区块链福费廷交易平台</a>
+
+                </div>
+
+            </div>
+            <div class="proList-li">
+                <img src="../img/ity.jpg" id="proList-li-img">
+                <div id="prodesc-4" class="prodesc">
+                    <img class="img-consult" src="../img/icon_jichuyunfuwu.png"
+                        style="width: 65px;height: 66px;">
+                    <div id="prodesc-spilt" style="z-index: 99;"></div>
+                    <p class="prodesc-p1">基础云服务</p>
+                    <p class="prodesc-p2">提供具有行业属性的金融云服务，助力金融机构构建双模IT，推动数字化转型。</p>
+                    <a class="prodesc-a" href="/home/web/product/consult.html">基础云服务</a>
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+    <div id="foot">
+        <div id="foot-up">
+            <div class="foot-up-info" style="width: 160px;float: left;">
+                <h4>产品矩阵</h4>
+                <p class="foot-up-spilt"></p>
+                <p>咨询服务</p>
+                <p>解决方案</p>
+                <p>金融Saas产品</p>
+                <p><a style="color: aliceblue;">基础云服务</a></p>
+            </div>
+            <div class="foot-up-info" style="width: 80px;margin-left:116px;margin-top: 0px;">
+                <h4>关于我们</h4>
+                <p class="foot-up-spilt"></p>
+                <p>公司介绍</p>
+                <p>招贤纳士</p>
+            </div>
+            <div class="foot-up-info" style="width: 300px;margin-left:116px;">
+                <h4>联系方式</h4>
+                <p class="foot-up-spilt"></p>
+                <p>邮编：100081</p>
+                <p>地址：北京市海淀区学院南路61号中关村资本大厦1001室</p>
+                <p>电话：010-83010111</p>
+                <p><a style="color: aliceblue;">电子邮箱：service@ronglianyiyun.com</a></p>
+            </div>
+            <div class="foot-up-info" style="margin: 0px auto 0px 100px;">
+                <h4>关注融联易云</h4>
+                <img src="../img/ewm.png" style="width: 111px;height: 111px;margin-top: 60px;">
+            </div>
+
+        </div>
+        <div id="foot-down">
+            <p>Copyright © 1017 融联易云金融信息服务（北京）有限公司 版权所有
+                <a>京ICP备17074655号</a> 隐私声明
+            </p>
+        </div>
+        <!-- <img id="back-top" src="../img/totop.png"> -->
+
+    </div>
+
+    </div>
+    <script src="https://cdn.staticfile.org/jquery/1.10.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("body").append('<img id="back-top"src="../img/totop.png"/>');
+            var top = $(window).scrollTop();
+            if (top > 0) {
+                $("#back-top").show();
+            } else {
+                $("#back-top").hide();
+            }
+            $(window).scroll(function () {
+                var top = $(window).scrollTop();
+                if (top > 0) {
+                    $("#back-top").show();
+                } else {
+                    $("#back-top").hide();
+                }
+            })
+            $("#back-top").click(function () {
+                $("html,body").animate({ scrollTop: 0 }, 300);
+            });
+        })
+
+    </script>
+    <script>
+        var imgCount = 4;
+        var index = 1;
+        var intervalId;
+        var buttonSpan = $('.pointer')[0].children;//htmlCollection 集合
+        //自动轮播功能 使用定时器
+        autoNextPage();
+        function autoNextPage() {
+            intervalId = setInterval(function () {
+                nextPage(true);
+            }, 3000);
+        }
+        //当鼠标移入 停止轮播
+        $('.container').mouseover(function () {
+            console.log('hah');
+            clearInterval(intervalId);
+        });
+        // 当鼠标移出，开始轮播
+        $('.container').mouseout(function () {
+            autoNextPage();
+        });
+        //点击下一页 上一页的功能
+        $('.left').click(function () {
+            nextPage(true);
+        });
+        $('.right').click(function () {
+            nextPage(false);
+        });
+        //小圆点的相应功能 事件委托
+        clickButtons();
+        function clickButtons() {
+            var length = buttonSpan.length;
+            for (var i = 0; i < length; i++) {
+                buttonSpan[i].onclick = function () {
+                    $(buttonSpan[index - 1]).removeClass('on');
+                    if ($(this).attr('index') == 1) {
+                        index = 4;
+                    } else {
+                        index = $(this).attr('index') - 1;
+                    }
+                    nextPage(true);
+
+                };
+            }
+        }
+        function nextPage(next) {
+            var targetLeft = 0;
+            //当前的圆点去掉on样式
+            $(buttonSpan[index - 1]).removeClass('on');
+            if (next) {//往后走
+                if (index == 4) {//到最后一张，直接跳到第一张
+                    targetLeft = 0;
+                    index = 1;
+                } else {
+                    index++;
+                    targetLeft = -1989 * (index - 1);
+                }
+
+            } else {//往前走
+                if (index == 1) {//在第一张，直接跳到第五张
+                    index = 4;
+                    targetLeft = -1989 * (imgCount - 1);
+                } else {
+                    index--;
+                    targetLeft = -1989 * (index - 1);
+                }
+
+            }
+            $('.list').animate({ left: targetLeft + 'px' });
+            //更新后的圆点加上样式
+            $(buttonSpan[index - 1]).addClass('on')
+        }
+
+
+    </script>
+</body>
+
+</html>
